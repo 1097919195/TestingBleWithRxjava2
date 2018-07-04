@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:text="建立write"/>
     <EditText
+        android:hint="需要写入的值"
         android:id="@+id/editText"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"

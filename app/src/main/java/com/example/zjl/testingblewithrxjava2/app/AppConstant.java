@@ -7,4 +7,5 @@ package com.example.zjl.testingblewithrxjava2.app;
 public class AppConstant {
     public static final int STANDARD_LENGTH = 16;
     public static final int ADJUST_VALUE = 14;
+    public static String WRITE_BYTE = "";
 }
