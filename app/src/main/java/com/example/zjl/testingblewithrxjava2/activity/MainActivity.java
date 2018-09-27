@@ -37,8 +37,8 @@ import io.reactivex.subjects.PublishSubject;
 public class MainActivity extends BaseActivity<BlePresenter,BleModel> implements BleContract.View {
     @BindView(R.id.btnBle)
     Button btnBle;
-    @BindView(R.id.text2)
-    TextView text2;
+    @BindView(R.id.text)
+    TextView text;
     @BindView(R.id.notification)
     Button notification;
     @BindView(R.id.write)
@@ -81,12 +81,12 @@ public class MainActivity extends BaseActivity<BlePresenter,BleModel> implements
     private void initListener() {
         btnBle.setOnClickListener(v->{
             ToastUtil.showShort("onClick");
-            text2.setText("start...");
+            text.setText("start...");
             mPresenter.getBleUUIDWithMac("7C:EC:79:E5:B3:B4");
         });
         notification.setOnClickListener(v->{
             ToastUtil.showShort("onClick");
-            text2.setText("start...");
+            text.setText("start...");
             mPresenter.setUpNotificationRequest(uuidNotification);
         });
         //FIXME 服务中操作还是活动中操作二选一
@@ -177,7 +177,7 @@ public class MainActivity extends BaseActivity<BlePresenter,BleModel> implements
 
     @Override
     public void returnGetBleUUIDWithMac(RxBleDeviceServices deviceServices, String macAddress) {
-        text2.setText(macAddress);
+        text.setText(macAddress);
         ToastUtil.showShort("OK");
     }
 
@@ -193,6 +193,6 @@ public class MainActivity extends BaseActivity<BlePresenter,BleModel> implements
 
     @Override
     public void showErrorTip(String msg) {
-        text2.setText(msg);
+        text.setText(msg);
     }
 }
